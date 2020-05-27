@@ -1,0 +1,135 @@
+html, body {
+   margin: 0;
+   padding: 0;
+   width: 100%;
+   height: auto;
+   font-family: 'Larsseit';
+}
+
+body {
+   background: #f2f2f2;
+}
+
+a {
+   text-decoration: none;
+}
+
+ion-icon {
+   font-size: 40px;
+}
+
+/* NAVIGATION */
+
+.navigation-container {
+   position: fixed;
+   width: 100%;
+   height: 60px;
+   top: 0;
+   background: #000;
+   transition: height 200ms linear;
+   z-index: 2;
+}
+
+.navigation-container.resized {
+   height: 50px;
+   transition: height 200ms linear;
+}
+
+.main-logo a {
+   position: absolute;
+   line-height: 60px;
+   left: 50%;
+   transform: translateX(-50%);
+   font-size: 2em;
+   color: #fff;
+   transition: all 200ms linear;
+}
+
+.navigation-container.resized .main-logo a {
+   line-height: 50px;
+   transition: all 200ms linear;
+}
+
+.menu-open, .menu-close {
+   position: absolute;
+   margin: 1em;
+   right: 0;
+}
+
+.menu-open {
+   margin: 0 1em;
+   top: 53%;
+   transform: translateY(-50%);
+   color: #fff;
+}
+
+.sidebar-navigation-container {
+   position: fixed;
+   width: 40%;
+   height: 100vh;
+   right: -40%;
+   background: #fff;
+   z-index: 2;
+}
+
+.navigation-items {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 80%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 20px;
+}
+
+.navigation-items .item {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   background: #000;
+   margin: 4px 0;
+   padding: 20px 0 15px 0;
+}
+
+.navigation-items .item a {
+   font-size: 4.5em;
+   font-weight: bolder;
+   text-transform: uppercase;
+   color: #fff;
+}
+
+.media-items {
+   position: fixed;
+   bottom: 80px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 40%;
+}
+
+.media-items .item a {
+   margin: 20px;
+   color: #000;
+}
+
+@media(max-width: 1375px) {
+   .sidebar-navigation-container {
+      width: 100%;
+      right: -100%;
+   }
+
+   .navigation-items .item a {
+      font-size: 2.5em;
+      padding: 10px 0 10px 0;
+   }
+
+   .media-items {
+      width: 100%;
+   }
+}
+
+/* CONTENT */
