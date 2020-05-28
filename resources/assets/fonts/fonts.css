@@ -1,0 +1,8 @@
+@font-face {
+   font-family: 'Monument Extended';
+   src: url(../fonts/MonumentExtended-Light.ttf);
+}
+
+* {
+   font-family: 'Monument Extended';
+}
