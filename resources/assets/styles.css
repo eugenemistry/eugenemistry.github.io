@@ -98,16 +98,16 @@ a {
 
 @media(max-width: 900px) {
    .pace {
-      width: 350px;
+      width: 290px;
    }
 
    .pace .pace-progress {
-      max-width: 350px;
+      max-width: 290px;
    }
 
    .p-tagline {
-      top: 43%;
-      font-size: 1.5em;
+      top: 46%;
+      font-size: 1.3em;
    }
    
    .navigation span > a {
