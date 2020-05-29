@@ -8,22 +8,60 @@
    <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="resources/assets/fonts/fonts.css">
    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/jquery-bez@1.0.11/src/jquery.bez.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+   <script src="resources/assets/script.js"></script>
 </head>
 <body>
-   <div id="preloader">
-      <div class="p-tagline">LOADING</div>
-   </div>
-
    <div class="navigation" id="navigation">
       <div class="logo">
          <span><a href="index.html">eugenemistry</a></span>
       </div>
+      <div class="navigation-open navigation-button">
+         <ion-icon name="menu"></ion-icon>
+      </div>
+      <div class="navigation-close navigation-button">
+         <ion-icon name="close"></ion-icon>
+      </div>
+      <div class="navigation-display">
+         <ul class="navigation-items">
+            <div class="navigation-item item-01">
+               <div class="item"><a href="index.html"><h2>Homepage</h2></a></div>
+               <div class="item-category">Welcome</div>
+            </div>
+            <div class="navigation-item item-02">
+               <div class="item"><a href="about.html"><h2>About</h2></a></div>
+               <div class="item-category">My Story</div>
+            </div>
+            <div class="navigation-item item-03">
+               <div class="item"><a href="purpose.html"><h2>Purpose</h2></a></div>
+               <div class="item-category">My Goal</div>
+            </div>
+            <div class="navigation-item item-04">
+               <div class="item"><a href="contact.html"><h2>Contact</h2></a></div>
+               <div class="item-category">Say Hello</div>
+            </div>
+         </ul>
+      </div>
    </div>
+   <script type="text/javascript">
+   var t1 = new TimelineMax({paused: true});
 
-   <script src="resources/assets/script.js"></script>
+   t1.to(".navigation-display", 1, {
+      height: "100%",
+      ease: Expo.easeInOut
+   });
+
+   t1.staggerFrom(".navigation-item", 1.3, {
+      y: 30,
+      opacity: 0,
+      ease: Expo.easeInOut
+   }, 0.1);
+
+   t1.reverse();
+   $(document).on("click", ".navigation-button", function() {
+      t1.reversed(!t1.reversed());
+   });
+   </script>
 </body>
 </html>
